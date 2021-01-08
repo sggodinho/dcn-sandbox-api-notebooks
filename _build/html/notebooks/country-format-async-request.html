@@ -1,0 +1,890 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CountryFormatAsyncRequest &#8212; DCN - SandBox</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PdfAsyncRequest" href="pdf-async-request.html" />
+    <link rel="prev" title="Introdução" href="../markdowns/introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DCN - SandBox</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdowns/introduction.html">
+   Introdução
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   CountryFormatAsyncRequest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pdf-async-request.html">
+   PdfAsyncRequest
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/country-format-async-request.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/sggodinho/dcn-sandbox-api-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/sggodinho/dcn-sandbox-api-notebooks/issues/new?title=Issue%20on%20page%20%2Fnotebooks/country-format-async-request.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/sggodinho/dcn-sandbox-api-notebooks/master?urlpath=tree/notebooks/notebooks/country-format-async-request.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#send-invoices-to-integrated-costumers">
+   Send invoices to integrated costumers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#service-steps">
+     Service steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#services-considerations">
+     Services considerations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#asynchrounous">
+       Asynchrounous
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#response-structure-from-server">
+       Response structure from server
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-a-token-account-gettoken">
+   Get a token (Account/getToken)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#send-invoice-request-countryformatasyncrequest-processdocument">
+   Send invoice request (CountryFormatAsyncRequest/processDocument)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bulild-the-service-endpoint-url">
+     Bulild the service endpoint url
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-the-payload-according-to-legal-invoice-format-cius-pt">
+     Prepare the payload according to legal invoice format (CIUS-PT)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#call-service-and-get-back-the-request-id">
+     Call service and get back the request id
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-to-success-of-your-request-countryformatasyncrequest-requestid">
+   Check to success of your request (CountryFormatAsyncRequest/{RequestId})
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Bulild the service endpoint url
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#call-service-and-get-back-the-outbound-document-id">
+     Call service and get back the outbound document id
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-invoice-integration-status-outboundfinancialdocument-documentid">
+   Check the invoice integration status (OutboundFinancialDocument/{DocumentId})
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Bulild the service endpoint url
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="countryformatasyncrequest">
+<h1>CountryFormatAsyncRequest<a class="headerlink" href="#countryformatasyncrequest" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="send-invoices-to-integrated-costumers">
+<h2>Send invoices to integrated costumers<a class="headerlink" href="#send-invoices-to-integrated-costumers" title="Permalink to this headline">¶</a></h2>
+<p>Use this service in the following cases:</p>
+<ul class="simple">
+<li><p>The invoice receiver is a public administration entity that requires to receive the invoice in the Portuguese legal format (CIUS-PT)</p></li>
+<li><p>The invoice receiver is a company tha requires specific rules on invoice format and validations such as a retail company, banking institutions etc..</p></li>
+</ul>
+<div class="section" id="service-steps">
+<h3>Service steps<a class="headerlink" href="#service-steps" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Get a token from your SIN credentials by calling the service <strong><em>Account/getToken</em></strong></p></li>
+<li><p>Send your invoice calling the <strong>asynchronous</strong> service <strong><em>CountryFormatAsyncRequest/processDocument</em></strong>; the legal invoice format (CIUS-PT) is sent in the payload</p></li>
+<li><p>Check to success of your request using the received <em>request id</em> at <strong><em>CountryFormatAsyncRequest/{RequestId}</em></strong></p></li>
+<li><p>Once the request has finished successfully you get back a <em>document id</em>; check the invoice integration status on your customer at service <strong><em>OutboundFinancialDocument</em>/{DocumentId}</strong></p></li>
+</ol>
+</div>
+<div class="section" id="services-considerations">
+<h3>Services considerations<a class="headerlink" href="#services-considerations" title="Permalink to this headline">¶</a></h3>
+<p>All services can be consulted using the Open API Specification (OAS3):<br />
+<a class="reference external" href="https://dcn-solution-int.saphety.com/Dcn.Business.WebApi/api/index.html">API specification</a> at https://dcn-solution-int.saphety.com/Dcn.Business.WebApi/api/index.html</p>
+<div class="section" id="asynchrounous">
+<h4>Asynchrounous<a class="headerlink" href="#asynchrounous" title="Permalink to this headline">¶</a></h4>
+<p>The service <strong><em>CountryFormatAsyncRequest/processDocument</em></strong> is an asynchrounous service. An invoice can take a few seconds to process (validate, sign, send to your costumer).<br />
+Since this is an integration API thousands of requests can be requested at the same time. For each request you receive immediatly a request id. Use it to query the request status.</p>
+</div>
+<div class="section" id="response-structure-from-server">
+<h4>Response structure from server<a class="headerlink" href="#response-structure-from-server" title="Permalink to this headline">¶</a></h4>
+<p>When a request is well formed and the authentication data is correct the system responds with a message envelope as follows:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;CorrelationId&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;GUID&gt;&quot;</span><span class="p">,</span> <span class="cm">/* for correlation purposes */</span>
+	<span class="s2">&quot;IsValid&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>           <span class="cm">/* false in case of erros */</span>
+	<span class="s2">&quot;Errors&quot;</span><span class="o">:</span> <span class="p">[],</span>              <span class="cm">/* if empty is a good signal */</span>
+	<span class="s2">&quot;Data&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;Service Response Data&gt;&quot;</span>   <span class="cm">/* the data retuned ex: token, invoice status, dependent on the service called */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-a-token-account-gettoken">
+<h2>Get a token (Account/getToken)<a class="headerlink" href="#get-a-token-account-gettoken" title="Permalink to this headline">¶</a></h2>
+<p>You have been given credentials when registering in SIN.<br />
+Use those credentials to get a token at.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ServerBaseAddress</span><span class="o">&gt;/</span><span class="n">api</span><span class="o">/</span><span class="n">Account</span><span class="o">/</span><span class="n">getToken</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integration environment</span>
+<span class="n">server_base_adress</span> <span class="o">=</span> <span class="s2">&quot;dcn-solution-int.saphety.com/Dcn.Business.WebApi&quot;</span>
+<span class="c1"># Quality environment</span>
+<span class="c1">#server_base_adress = &quot;dcn-solution-qa.saphety.com/Dcn.Business.WebApi&quot;</span>
+<span class="c1"># Production environemnt</span>
+<span class="c1">#server_base_adress = &quot;dcn-solution.saphety.com/Dcn.Business.WebApi&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># SIN account service url</span>
+<span class="n">service_url</span> <span class="o">=</span> <span class="s2">&quot;https://&quot;</span> <span class="o">+</span> <span class="n">server_base_adress</span> <span class="o">+</span> <span class="s2">&quot;/api/Account/getToken&quot;</span>
+
+<span class="c1"># the username and password you registerd in SIN</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jorge@saphety.com&#39;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;saphety123.&#39;</span>
+
+<span class="c1"># auhtentication data goes in payload as json</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;Username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+      <span class="s1">&#39;Password&#39;</span><span class="p">:</span> <span class="n">password</span>
+<span class="p">}</span>
+<span class="c1"># payload goes in json, serialize the payloal object to json</span>
+<span class="n">request_data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+<span class="c1"># indicate in header that payload is json</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="p">}</span>
+<span class="c1"># POST request to get a token</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">service_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">request_data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># formating the response to json for visualization purposes only</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+    &quot;CorrelationId&quot;: &quot;ff79462f-822b-43da-87fe-c5d90e910efe&quot;,
+    &quot;IsValid&quot;: true,
+    &quot;Errors&quot;: [],
+    &quot;Data&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb3JnZUBzYXBoZXR5LmNvbSIsInVuaXF1ZV9uYW1lIjoiSm9yZ2UgVGVpeGVpcmEiLCJzeXN0ZW1fYWRtaW4iOiJUcnVlIiwic2Vzc2lvbl9pZCI6Ijk3YjBkMDg2LWY1MTItNDRjZi1hNzcxLWVkOGQzZWU1MWUzNyIsInJsIjoiQWRtaW5pc3RyYXRvciIsImNwIjoiUFQ1MDA5MDU0NzkiLCJuYmYiOjE2MTAxMDY4NjEsImV4cCI6MTYxNjEwNjgwMSwiaWF0IjoxNjEwMTA2ODAxLCJpc3MiOiJodHRwczovL3d3dy5zYXBoZXR5LmNvbS8iLCJhdWQiOiJodHRwczovL3d3dy5zYXBoZXR5LmNvbS9EY25TZXJ2ZXIifQ.qCwB4hfwYosFi4gUqwiupoMr8zER5jRxe3NUOH8DC3I&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your token is at:</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">];</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb3JnZUBzYXBoZXR5LmNvbSIsInVuaXF1ZV9uYW1lIjoiSm9yZ2UgVGVpeGVpcmEiLCJzeXN0ZW1fYWRtaW4iOiJUcnVlIiwic2Vzc2lvbl9pZCI6Ijk3YjBkMDg2LWY1MTItNDRjZi1hNzcxLWVkOGQzZWU1MWUzNyIsInJsIjoiQWRtaW5pc3RyYXRvciIsImNwIjoiUFQ1MDA5MDU0NzkiLCJuYmYiOjE2MTAxMDY4NjEsImV4cCI6MTYxNjEwNjgwMSwiaWF0IjoxNjEwMTA2ODAxLCJpc3MiOiJodHRwczovL3d3dy5zYXBoZXR5LmNvbS8iLCJhdWQiOiJodHRwczovL3d3dy5zYXBoZXR5LmNvbS9EY25TZXJ2ZXIifQ.qCwB4hfwYosFi4gUqwiupoMr8zER5jRxe3NUOH8DC3I
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="send-invoice-request-countryformatasyncrequest-processdocument">
+<h2>Send invoice request (CountryFormatAsyncRequest/processDocument)<a class="headerlink" href="#send-invoice-request-countryformatasyncrequest-processdocument" title="Permalink to this headline">¶</a></h2>
+<p>No that you have token you can send an invoice in the legal format (CISU-Pt)</p>
+<div class="section" id="bulild-the-service-endpoint-url">
+<h3>Bulild the service endpoint url<a class="headerlink" href="#bulild-the-service-endpoint-url" title="Permalink to this headline">¶</a></h3>
+<p>In the service url you need to supply 2 paramenters:</p>
+<ol class="simple">
+<li><p>Invoice issuer NIF <strong><em>&lt;IssuerNIF&gt;</em></strong> (prefixed with the country code)<br />
+Must be the NIF of the registered company in SIN (ex: PT507957547). This NIF will be matched against the account registration in SIN for authorization purposes.</p></li>
+<li><p>The document type <strong><em>&lt;DocumentType&gt;</em></strong> must be one of the following</p>
+<ol class="simple">
+<li><p><strong>INVOICE</strong></p></li>
+<li><p><strong>CREDIT_NOTE</strong></p></li>
+</ol>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ServerBaseUrl</span><span class="o">&gt;/</span><span class="n">CountryFormatAsyncRequest</span><span class="o">/</span><span class="n">processDocument</span><span class="o">/&lt;</span><span class="n">IssuerNIF</span><span class="o">&gt;/&lt;</span><span class="n">DocumentType</span><span class="o">&gt;/</span><span class="n">PT</span>
+</pre></div>
+</div>
+<p>For sending an invoice the service endpoint becomes (example):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ServerBaseUrl</span><span class="o">&gt;/</span><span class="n">CountryFormatAsyncRequest</span><span class="o">/</span><span class="n">processDocument</span><span class="o">/</span><span class="n">PT507957547</span><span class="o">/</span><span class="n">INVOICE</span><span class="o">/</span><span class="n">PT</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SIN service url form sending invoices requires issuer NIF and country and the document type</span>
+<span class="n">issuer_nif</span> <span class="o">=</span> <span class="s2">&quot;PT507957547&quot;</span>
+<span class="n">document_type</span> <span class="o">=</span> <span class="s2">&quot;INVOICE&quot;</span>
+
+<span class="n">service_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{ServerBaseUrl}</span><span class="s2">/api/CountryFormatAsyncRequest/processDocument/</span><span class="si">{IssuerNIF}</span><span class="s2">/</span><span class="si">{DocumentType}</span><span class="s2">/PT&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">ServerBaseUrl</span><span class="o">=</span><span class="n">server_base_adress</span><span class="p">,</span>
+    <span class="n">IssuerNIF</span><span class="o">=</span><span class="n">issuer_nif</span><span class="p">,</span>
+    <span class="n">DocumentType</span><span class="o">=</span><span class="n">document_type</span>
+<span class="p">)</span>
+<span class="n">service_url</span> <span class="o">=</span> <span class="s2">&quot;https://&quot;</span> <span class="o">+</span> <span class="n">service_url</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">service_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dcn-solution-int.saphety.com/Dcn.Business.WebApi/api/CountryFormatAsyncRequest/processDocument/PT507957547/INVOICE/PT
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="prepare-the-payload-according-to-legal-invoice-format-cius-pt">
+<h3>Prepare the payload according to legal invoice format (CIUS-PT)<a class="headerlink" href="#prepare-the-payload-according-to-legal-invoice-format-cius-pt" title="Permalink to this headline">¶</a></h3>
+<p>The legal invoice format in Portugal (CIUS-PT) is defined by eSPAP.<br />
+<a class="reference external" href="https://www.espap.gov.pt/spfin/normas/Paginas/normas.aspx">Legal format documnetion documentation here at eSPAP</a><br />
+<a class="reference external" href="https://doc-server.saphety.com/Doc.Client/public/CIUSvalidation/PT?language=pt">A CIUS-PT validator is available here</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># request boby must be a valid CIUS-PT</span>
+<span class="n">body_cius_pt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="s2">&lt;ubl:Invoice xmlns:cac=&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2&quot; </span>
+<span class="s2">xmlns:cbc=&quot;urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2&quot; xmlns:ubl=&quot;urn:oasis:names:specification:ubl:schema:xsd:Invoice-2&quot;&gt;</span>
+<span class="s2">  &lt;cbc:CustomizationID&gt;urn:cen.eu:en16931:2017#compliant#urn:feap.gov.pt:CIUS-PT:2.0.0&lt;/cbc:CustomizationID&gt;</span>
+<span class="s2">  &lt;cbc:ID&gt;INVOICE-06-01-002&lt;/cbc:ID&gt;</span>
+<span class="s2">  &lt;cbc:IssueDate&gt;2020-12-31&lt;/cbc:IssueDate&gt;</span>
+<span class="s2">  &lt;cbc:DueDate&gt;2019-01-28&lt;/cbc:DueDate&gt;</span>
+<span class="s2">  &lt;cbc:InvoiceTypeCode&gt;380&lt;/cbc:InvoiceTypeCode&gt;</span>
+<span class="s2">  &lt;cbc:DocumentCurrencyCode&gt;EUR&lt;/cbc:DocumentCurrencyCode&gt;</span>
+<span class="s2">  &lt;cac:OrderReference&gt;</span>
+<span class="s2">    &lt;cbc:ID&gt;ORD-001&lt;/cbc:ID&gt;</span>
+<span class="s2">  &lt;/cac:OrderReference&gt;</span>
+<span class="s2">  &lt;cac:AccountingSupplierParty&gt;</span>
+<span class="s2">    &lt;cac:Party&gt;</span>
+<span class="s2">      &lt;cbc:EndpointID schemeID=&quot;EM&quot;&gt;wolox67586@1heizi.com&lt;/cbc:EndpointID&gt;</span>
+<span class="s2">      &lt;cac:PartyIdentification&gt;</span>
+<span class="s2">        &lt;cbc:ID schemeID=&quot;0001&quot;&gt;PT507957547&lt;/cbc:ID&gt;</span>
+<span class="s2">      &lt;/cac:PartyIdentification&gt;</span>
+<span class="s2">      &lt;cac:PartyIdentification&gt;</span>
+<span class="s2">        &lt;cbc:ID schemeID=&quot;0088&quot;&gt;5600000455210&lt;/cbc:ID&gt;</span>
+<span class="s2">      &lt;/cac:PartyIdentification&gt;</span>
+<span class="s2">      &lt;cac:PartyName&gt;</span>
+<span class="s2">        &lt;cbc:Name&gt;Saphety&lt;/cbc:Name&gt;</span>
+<span class="s2">      &lt;/cac:PartyName&gt;</span>
+<span class="s2">      &lt;cac:PostalAddress&gt;</span>
+<span class="s2">        &lt;cbc:StreetName&gt;Rua Viriato, 13 - 2.º Piso&lt;/cbc:StreetName&gt;</span>
+<span class="s2">        &lt;cbc:CityName&gt;LISBOA&lt;/cbc:CityName&gt;</span>
+<span class="s2">        &lt;cbc:PostalZone&gt;2860-358&lt;/cbc:PostalZone&gt;</span>
+<span class="s2">        &lt;cbc:CountrySubentity&gt;1050-233&lt;/cbc:CountrySubentity&gt;</span>
+<span class="s2">        &lt;cac:Country&gt;</span>
+<span class="s2">          &lt;cbc:IdentificationCode listID=&quot;ISO3166-1&quot;&gt;PT&lt;/cbc:IdentificationCode&gt;</span>
+<span class="s2">        &lt;/cac:Country&gt;</span>
+<span class="s2">      &lt;/cac:PostalAddress&gt;</span>
+<span class="s2">      &lt;cac:PartyTaxScheme&gt;</span>
+<span class="s2">        &lt;cbc:CompanyID&gt;PT507957547&lt;/cbc:CompanyID&gt;</span>
+<span class="s2">        &lt;cac:TaxScheme&gt;</span>
+<span class="s2">          &lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;</span>
+<span class="s2">        &lt;/cac:TaxScheme&gt;</span>
+<span class="s2">      &lt;/cac:PartyTaxScheme&gt;</span>
+<span class="s2">      &lt;cac:PartyLegalEntity&gt;</span>
+<span class="s2">        &lt;cbc:RegistrationName&gt;Saphety&lt;/cbc:RegistrationName&gt;</span>
+<span class="s2">        &lt;cbc:CompanyID schemeID=&quot;0001&quot;&gt;507957547&lt;/cbc:CompanyID&gt;</span>
+<span class="s2">      &lt;/cac:PartyLegalEntity&gt;</span>
+<span class="s2">    &lt;/cac:Party&gt;</span>
+<span class="s2">  &lt;/cac:AccountingSupplierParty&gt;</span>
+<span class="s2">  &lt;cac:AccountingCustomerParty&gt;</span>
+<span class="s2">    &lt;cac:Party&gt;</span>
+<span class="s2">      &lt;cac:PartyIdentification&gt;</span>
+<span class="s2">        &lt;cbc:ID schemeID=&quot;0001&quot;&gt;PT500960046&lt;/cbc:ID&gt;</span>
+<span class="s2">      &lt;/cac:PartyIdentification&gt;</span>
+<span class="s2">      &lt;cac:PartyIdentification&gt;</span>
+<span class="s2">        &lt;cbc:ID schemeID=&quot;0088&quot;&gt;9800000000083&lt;/cbc:ID&gt;</span>
+<span class="s2">      &lt;/cac:PartyIdentification&gt;</span>
+<span class="s2">      &lt;cac:PartyName&gt;</span>
+<span class="s2">        &lt;cbc:Name&gt;CAIXA GERAL DE DEPOSITOS S.A.&lt;/cbc:Name&gt;</span>
+<span class="s2">      &lt;/cac:PartyName&gt;</span>
+<span class="s2">      &lt;cac:PostalAddress&gt;</span>
+<span class="s2">        &lt;cbc:StreetName&gt;Avenida João XXI, 63&lt;/cbc:StreetName&gt;</span>
+<span class="s2">        &lt;cbc:PostalZone&gt;1000-300&lt;/cbc:PostalZone&gt;</span>
+<span class="s2">        &lt;cbc:CountrySubentity&gt;PT&lt;/cbc:CountrySubentity&gt;</span>
+<span class="s2">        &lt;cac:Country&gt;</span>
+<span class="s2">          &lt;cbc:IdentificationCode listID=&quot;ISO3166-1&quot;&gt;PT&lt;/cbc:IdentificationCode&gt;</span>
+<span class="s2">        &lt;/cac:Country&gt;</span>
+<span class="s2">      &lt;/cac:PostalAddress&gt;</span>
+<span class="s2">      &lt;cac:PartyTaxScheme&gt;</span>
+<span class="s2">        &lt;cbc:CompanyID&gt;PT500960046&lt;/cbc:CompanyID&gt;</span>
+<span class="s2">        &lt;cac:TaxScheme&gt;</span>
+<span class="s2">          &lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;</span>
+<span class="s2">        &lt;/cac:TaxScheme&gt;</span>
+<span class="s2">      &lt;/cac:PartyTaxScheme&gt;</span>
+<span class="s2">      &lt;cac:PartyLegalEntity&gt;</span>
+<span class="s2">        &lt;cbc:RegistrationName&gt;CAIXA GERAL DE DEPOSITOS S.A.&lt;/cbc:RegistrationName&gt;</span>
+<span class="s2">      &lt;/cac:PartyLegalEntity&gt;</span>
+<span class="s2">    &lt;/cac:Party&gt;</span>
+<span class="s2">  &lt;/cac:AccountingCustomerParty&gt;</span>
+<span class="s2">  &lt;cac:Delivery&gt;</span>
+<span class="s2">    &lt;cac:DeliveryLocation&gt;</span>
+<span class="s2">      &lt;cbc:ID schemeID=&quot;0088&quot;&gt;9800000000083&lt;/cbc:ID&gt;</span>
+<span class="s2">      &lt;cac:Address&gt;</span>
+<span class="s2">        &lt;cbc:StreetName&gt;Avenida João XXI, 63&lt;/cbc:StreetName&gt;</span>
+<span class="s2">		&lt;cbc:CityName&gt;Lisboa&lt;/cbc:CityName&gt;</span>
+<span class="s2">        &lt;cbc:PostalZone&gt;1000-300&lt;/cbc:PostalZone&gt;</span>
+<span class="s2">        &lt;cbc:CountrySubentity&gt;PT&lt;/cbc:CountrySubentity&gt;</span>
+<span class="s2">        &lt;cac:Country&gt;</span>
+<span class="s2">          &lt;cbc:IdentificationCode listID=&quot;ISO3166-1&quot;&gt;PT&lt;/cbc:IdentificationCode&gt;</span>
+<span class="s2">        &lt;/cac:Country&gt;</span>
+<span class="s2">      &lt;/cac:Address&gt;</span>
+<span class="s2">    &lt;/cac:DeliveryLocation&gt;</span>
+<span class="s2">    &lt;cac:DeliveryParty&gt;</span>
+<span class="s2">      &lt;cac:PartyName&gt;</span>
+<span class="s2">        &lt;cbc:Name&gt;CAIXA GERAL DE DEPOSITOS S.A.&lt;/cbc:Name&gt;</span>
+<span class="s2">      &lt;/cac:PartyName&gt;</span>
+<span class="s2">    &lt;/cac:DeliveryParty&gt;</span>
+<span class="s2">  &lt;/cac:Delivery&gt;</span>
+<span class="s2">  &lt;cac:TaxTotal&gt;</span>
+<span class="s2">    &lt;cbc:TaxAmount currencyID=&quot;EUR&quot;&gt;23.00&lt;/cbc:TaxAmount&gt;</span>
+<span class="s2">    &lt;cac:TaxSubtotal&gt;</span>
+<span class="s2">      &lt;cbc:TaxableAmount currencyID=&quot;EUR&quot;&gt;100.00&lt;/cbc:TaxableAmount&gt;</span>
+<span class="s2">      &lt;cbc:TaxAmount currencyID=&quot;EUR&quot;&gt;23.00&lt;/cbc:TaxAmount&gt;</span>
+<span class="s2">      &lt;cac:TaxCategory&gt;</span>
+<span class="s2">        &lt;cbc:ID&gt;S&lt;/cbc:ID&gt;</span>
+<span class="s2">        &lt;cbc:Percent&gt;23.00&lt;/cbc:Percent&gt;</span>
+<span class="s2">        &lt;cac:TaxScheme&gt;</span>
+<span class="s2">          &lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;</span>
+<span class="s2">        &lt;/cac:TaxScheme&gt;</span>
+<span class="s2">      &lt;/cac:TaxCategory&gt;</span>
+<span class="s2">    &lt;/cac:TaxSubtotal&gt;</span>
+<span class="s2">  &lt;/cac:TaxTotal&gt;</span>
+<span class="s2">  &lt;cac:LegalMonetaryTotal&gt;</span>
+<span class="s2">    &lt;cbc:LineExtensionAmount currencyID=&quot;EUR&quot;&gt;100.00&lt;/cbc:LineExtensionAmount&gt;</span>
+<span class="s2">    &lt;cbc:TaxExclusiveAmount currencyID=&quot;EUR&quot;&gt;100.00&lt;/cbc:TaxExclusiveAmount&gt;</span>
+<span class="s2">    &lt;cbc:TaxInclusiveAmount currencyID=&quot;EUR&quot;&gt;123.00&lt;/cbc:TaxInclusiveAmount&gt;</span>
+<span class="s2">    &lt;cbc:PayableAmount currencyID=&quot;EUR&quot;&gt;123.00&lt;/cbc:PayableAmount&gt;</span>
+<span class="s2">  &lt;/cac:LegalMonetaryTotal&gt;</span>
+<span class="s2">  &lt;cac:InvoiceLine&gt;</span>
+<span class="s2">    &lt;cbc:ID&gt;1&lt;/cbc:ID&gt;</span>
+<span class="s2">    &lt;cbc:InvoicedQuantity unitCode=&quot;C62&quot;&gt;10.00&lt;/cbc:InvoicedQuantity&gt;</span>
+<span class="s2">    &lt;cbc:LineExtensionAmount currencyID=&quot;EUR&quot;&gt;100.00&lt;/cbc:LineExtensionAmount&gt;</span>
+<span class="s2">    &lt;cac:Item&gt;</span>
+<span class="s2">      &lt;cbc:Name&gt;Item 1&lt;/cbc:Name&gt;</span>
+<span class="s2">      &lt;cac:ClassifiedTaxCategory&gt;</span>
+<span class="s2">        &lt;cbc:ID&gt;S&lt;/cbc:ID&gt;</span>
+<span class="s2">        &lt;cbc:Percent&gt;23.00&lt;/cbc:Percent&gt;</span>
+<span class="s2">        &lt;cac:TaxScheme&gt;</span>
+<span class="s2">          &lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;</span>
+<span class="s2">        &lt;/cac:TaxScheme&gt;</span>
+<span class="s2">      &lt;/cac:ClassifiedTaxCategory&gt;</span>
+<span class="s2">    &lt;/cac:Item&gt;</span>
+<span class="s2">    &lt;cac:Price&gt;</span>
+<span class="s2">      &lt;cbc:PriceAmount currencyID=&quot;EUR&quot;&gt;10.00&lt;/cbc:PriceAmount&gt;</span>
+<span class="s2">    &lt;/cac:Price&gt;</span>
+<span class="s2">  &lt;/cac:InvoiceLine&gt;</span>
+<span class="s2">&lt;/ubl:Invoice&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="call-service-and-get-back-the-request-id">
+<h3>Call service and get back the request id<a class="headerlink" href="#call-service-and-get-back-the-request-id" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build the request</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/xml&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;bearer &#39;</span> <span class="o">+</span> <span class="n">token</span>
+    <span class="p">}</span>
+<span class="c1"># POST request to send the invoice</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">service_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body_cius_pt</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># formating the response to json for visualization purposes only</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+    &quot;CorrelationId&quot;: &quot;2a72fcad-7a17-41f2-adca-fc74b0134aa7&quot;,
+    &quot;IsValid&quot;: true,
+    &quot;Errors&quot;: [],
+    &quot;Data&quot;: &quot;aca100cb-a750-450c-902a-0a80c98bd463&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your request id is at:</span>
+<span class="n">request_id</span> <span class="o">=</span> <span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">];</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">request_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aca100cb-a750-450c-902a-0a80c98bd463
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-to-success-of-your-request-countryformatasyncrequest-requestid">
+<h2>Check to success of your request (CountryFormatAsyncRequest/{RequestId})<a class="headerlink" href="#check-to-success-of-your-request-countryformatasyncrequest-requestid" title="Permalink to this headline">¶</a></h2>
+<p>Query the system using this <em>request id</em> in order to get the status (success or error) of your request</p>
+<div class="section" id="id1">
+<h3>Bulild the service endpoint url<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>In the service url you need to supply the request id received</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ServerBaseUrl</span><span class="o">&gt;/</span><span class="n">CountryFormatAsyncRequest</span><span class="o">/&lt;</span><span class="n">RequestId</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SIN service url for retrieving the status of a process</span>
+
+<span class="n">service_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{ServerBaseUrl}</span><span class="s2">/api/CountryFormatAsyncRequest/</span><span class="si">{RequestId}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">ServerBaseUrl</span><span class="o">=</span><span class="n">server_base_adress</span><span class="p">,</span>
+    <span class="n">RequestId</span><span class="o">=</span><span class="n">request_id</span>
+<span class="p">)</span>
+<span class="n">service_url</span> <span class="o">=</span> <span class="s2">&quot;https://&quot;</span> <span class="o">+</span> <span class="n">service_url</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">service_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dcn-solution-int.saphety.com/Dcn.Business.WebApi/api/CountryFormatAsyncRequest/aca100cb-a750-450c-902a-0a80c98bd463
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="call-service-and-get-back-the-outbound-document-id">
+<h3>Call service and get back the outbound document id<a class="headerlink" href="#call-service-and-get-back-the-outbound-document-id" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build the request</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;bearer &#39;</span> <span class="o">+</span> <span class="n">token</span>
+    <span class="p">}</span>
+<span class="c1"># POST request to send the invoice</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">service_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="c1"># formating the response to json for visualization purposes only</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your status:</span>
+<span class="n">status</span> <span class="o">=</span> <span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">]</span>
+<span class="c1">#print(json.dumps(json_response, indent=4))</span>
+
+<span class="c1">#request status (Running, Error, Finished)</span>
+<span class="n">request_status</span> <span class="o">=</span> <span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">][</span><span class="s2">&quot;AsyncStatus&quot;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">request_status</span> <span class="o">==</span> <span class="s2">&quot;Running&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Your request is runnig check the status again in a few seconds...&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">request_status</span> <span class="o">==</span> <span class="s2">&quot;Error&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Your request has finished with the following errors:&quot;</span><span class="p">)</span>
+    <span class="n">error_list</span><span class="o">=</span><span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">][</span><span class="s2">&quot;ErrorList&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">error_list</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Correct the errros and sublit the document again&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">request_status</span> <span class="o">==</span> <span class="s2">&quot;Finished&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Your request has finished.&quot;</span><span class="p">)</span>
+    <span class="n">outbound_financial_document_id</span> <span class="o">=</span> <span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">][</span><span class="s2">&quot;OutboundFinancialDocumentId&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have created the outbound document id: &quot;</span> <span class="o">+</span> <span class="n">outbound_financial_document_id</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your request status: &quot;</span> <span class="o">+</span> <span class="n">request_status</span><span class="p">);</span>
+
+<span class="c1">#print(json_response[&quot;Data&quot;][&quot;ErrorList&quot;])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outbound_financial_document_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your request is runnig check the status again in a few seconds...
+Your request status: Running
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">10</span><span class="n">c48290fac8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> 
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="c1">#print(json_response[&quot;Data&quot;][&quot;ErrorList&quot;])</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="nb">print</span><span class="p">(</span><span class="n">outbound_financial_document_id</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;outbound_financial_document_id&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-invoice-integration-status-outboundfinancialdocument-documentid">
+<h2>Check the invoice integration status (OutboundFinancialDocument/{DocumentId})<a class="headerlink" href="#check-the-invoice-integration-status-outboundfinancialdocument-documentid" title="Permalink to this headline">¶</a></h2>
+<p>With the received outbound finantial docuemnt id you can query at any time the system for docuemnt status and integration status</p>
+<div class="section" id="id2">
+<h3>Bulild the service endpoint url<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>In the service url you need to supply the outbfinancialdocument received</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ServerBaseUrl</span><span class="o">&gt;/</span><span class="n">OutboundFinancialDocument</span><span class="o">/&lt;</span><span class="n">OutboundFinancialDocumentId</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SIN service url for retrieving inforfation on invoice previously sent</span>
+
+<span class="n">service_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{ServerBaseUrl}</span><span class="s2">/api/OutboundFinancialDocument/</span><span class="si">{OutboundFinancialDocumentId}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">ServerBaseUrl</span><span class="o">=</span><span class="n">server_base_adress</span><span class="p">,</span>
+    <span class="n">OutboundFinancialDocumentId</span><span class="o">=</span><span class="n">outbound_financial_document_id</span>
+<span class="p">)</span>
+<span class="n">service_url</span> <span class="o">=</span> <span class="s2">&quot;https://&quot;</span> <span class="o">+</span> <span class="n">service_url</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">service_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dcn-solution-int.saphety.com/Dcn.Business.WebApi/api/OutboundFinancialDocument/8523e892-2103-4088-8227-e7087b719a1c
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build the request</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;bearer &#39;</span> <span class="o">+</span> <span class="n">token</span>
+    <span class="p">}</span>
+<span class="c1"># POST request to send the invoice</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">service_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="c1"># formating the response to json for visualization purposes only</span>
+<span class="n">json_response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integration_status</span> <span class="o">=</span> <span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">][</span><span class="s2">&quot;IntegrationStatus&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integration_status</span><span class="p">)</span>
+
+<span class="c1">#integration status (Sent, Received,...)</span>
+
+<span class="k">if</span> <span class="n">integration_status</span> <span class="o">==</span> <span class="s2">&quot;Sent&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sent: Your invoice has been sucessfully processed ans set to your costummer.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">integration_status</span> <span class="o">==</span> <span class="s2">&quot;Received&quot;</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Received: Your invoice has been received by your costummer.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your invoice integration status: &quot;</span> <span class="o">+</span> <span class="n">integration_status</span><span class="p">);</span>
+
+<span class="c1">#print(json.dumps(json_response, indent=4))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Received
+Received: Your invoice has been received by your costummer.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Use the OutboundFinancialDocumentId for any future checks on the invoice sent.</strong></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../markdowns/introduction.html" title="previous page">Introdução</a>
+    <a class='right-next' id="next-link" href="pdf-async-request.html" title="next page">PdfAsyncRequest</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Saphety<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

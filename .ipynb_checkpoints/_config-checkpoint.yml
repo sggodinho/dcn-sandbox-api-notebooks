@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: DCN - The Invoice Network
+title: DCN - SandBox
 author: Saphety
 logo: images/logo.png
 
@@ -15,10 +15,14 @@ latex:
   latex_documents:
     targetname: book.tex
 
+# Define your Binder to run code
+launch_buttons:
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  url: https://github.com/sggodinho/dcn-sandbox-api-notebooks  # Online location of your book
+  path_to_book: "notebooks"  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
